@@ -1,0 +1,21 @@
+ <!-- Masthead-->
+  
+    <link rel="stylesheet" href="/public/css/landing.css">
+
+<div class="bg">
+    <div>
+    <form method="POST" action="/searchCar" id="landing-form" name="landing-form">
+        <label for="source_Address">
+        Search City
+        </label>
+            <input class ="input" id="source_Address" name="sourceAddress" type="text" placeholder="Enter a City" data-sb-validations="required,text" />
+            <button class="btn btn-warning" id="submitButton" type="submit">Submit</button>
+    </form>
+    </div>
+
+<div id="error_landing" class="alert alert-danger" role="alert"></div>
+
+    <div>
+        {{error}}
+    </div>
+    </div>

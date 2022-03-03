@@ -1,0 +1,40 @@
+<div id="error_answerQuestions" class="alert alert-danger" role="alert"></div>
+{{#if hasErrors}}
+  <ul class="error-list">
+    {{#each errors}}
+      <li>
+        {{this}}
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+{{#if isMessage}}
+  <ul class="message-list">
+    {{#each messages}}
+      <li>
+        {{this}}
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+<link rel="stylesheet" href="/public/css/login.css" />
+{{#each questions}}
+  <div class="login-page">
+    <div class="form">
+      <div class="login">
+        <div class="login-header">
+          <h3>Questions</h3>
+        </div>
+          <p>{{question}}</p>
+          <form
+          method="get"
+          name="get_answer-form"
+          action="/answerQuestions/{{_id}}">
+          <input type="submit" class="btn-p" />
+        </form>
+      </div>
+    </div>
+    </div>
+{{/each}}

@@ -1,0 +1,67 @@
+<h1>My Cars</h1>
+{{#if hasErrors}}
+    <ul class="error-list">
+        {{#each errors}}
+        <li>
+        {{this}}
+        </li>
+        {{/each}}
+    </ul>
+{{else}}
+    {{#each approved}}
+    <div class="card text-white bg-dark mb-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h2 class="card-title text-start">{{brandName}}</h2>
+            <span class="placeholder placeholder-xs col-12 bg-primary"></span>
+            <div class="d-flex justify-content-evenly">
+                <div class="card-text m-2">
+                    <p>Color: {{color}}</p>
+                    <p>Number: {{number}}</p>
+                    <p>Capacity: {{capacity}}</p>
+                    <p>Rate: {{rate}}</p>
+                    <p>Status: {{status}}</p>
+                </div>
+            </div>
+            <div>
+                <form action="/myCar/MyRequests/{{_id}}" method="get">
+                    <button type="submit">My Requests</button>
+                </form>
+            </div>
+            <div>
+                <form action="/myCar/deleteCar/{{_id}}" method="get">
+                    <button type="submit">Delete Car</button>
+                </form>
+            </div>
+            <span class="placeholder placeholder-xs col-12 bg-danger"></span>
+        </div>
+    </div>
+    {{/each}}
+    {{#each pending}}
+    <div class="card text-white bg-dark mb-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h2 class="card-title text-start">{{brandName}}</h2>
+            <span class="placeholder placeholder-xs col-12 bg-primary"></span>
+            <div class="d-flex justify-content-evenly">
+                <div class="card-text m-2">
+                    <p>Color: {{color}}</p>
+                    <p>Number: {{number}}</p>
+                    <p>Capacity: {{capacity}}</p>
+                    <p>Rate: {{rate}}</p>
+                    <p>Status: {{status}}</p>
+                </div>
+            </div>
+            <div>
+                <form action="/myCar/deleteCar/{{_id}}" method="get">
+                    <button type="submit">Delete Car</button>
+                </form>
+            </div>
+            <span class="placeholder placeholder-xs col-12 bg-danger"></span>
+        </div>
+    </div>
+    {{/each}}
+    <form action="myCar/addCar" method="get">
+        <button id="b1" type="submit">Add new car</button>
+    </form>
+{{/if}}

@@ -1,0 +1,33 @@
+<h1>My Requests</h1>
+{{#if hasErrors}}
+    <ul class="error-list">
+        {{#each errors}}
+        <li>
+        {{this}}
+        </li>
+        {{/each}}
+    </ul>
+{{else}}
+    {{#each data}}
+    <div class="card text-white bg-dark mb-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h2 class="card-title text-start">{{bookingStatus}}</h2>
+            <span class="placeholder placeholder-xs col-12 bg-primary"></span>
+            <div class="d-flex justify-content-evenly">
+                <div class="card-text m-2">
+                    <h3>{{firstName}} {{lastName}}</h3>
+                    <span class="placeholder placeholder-xs col-12 bg-success"></span>
+                    <p>PhoneNumber: {{phoneNumber}}</p>
+                    <p>Startdate: {{car.startdate}}</p>
+                    <p>Enddate: {{car.enddate}}</p>
+                    <p>TotalCost: {{totalCost}}</p>
+                </div>
+            </div>
+            <form action='/myCar/MyRequests/{{car._id}}/{{_id}}/approved' method="get"><button type="submit">Approve</button></form>
+            <form action='/myCar/MyRequests/{{_id}}/rejected' method="get"><button type="submit">Reject</button></form>
+            <span class="placeholder placeholder-xs col-12 bg-danger"></span>
+        </div>
+    </div>
+    {{/each}}
+{{/if}}

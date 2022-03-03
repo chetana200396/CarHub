@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+    mongo:
+        image: mongo:latest
+        container_name: carhub
+        environment:
+            MONGO_INITDB_DATABASE: CarHub
+        volumes:
+            - ./mongodb-docker:/data/db
+        ports:
+            - 27017:27017

@@ -1,0 +1,30 @@
+{
+    "name": "final_project",
+    "version": "1.0.0",
+    "description": "Car Hub",
+    "main": "app.js",
+    "scripts": {
+        "seed": "node ./tasks/seed.js",
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "author": "Group 10",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "bcryptjs": "^2.4.3",
+        "connect-mongodb-session": "^3.1.1",
+        "cookie-parser": "^1.4.5",
+        "express": "^4.17.1",
+        "express-fileupload": "^1.2.1",
+        "express-handlebars": "^5.3.4",
+        "express-rate-limit": "^5.1.1",
+        "express-session": "^1.17.0",
+        "handlebars": "^4.7.7",
+        "jsonschema": "^1.4.0",
+        "mongodb": "^4.1.4",
+        "nodemailer": "^6.7.0",
+        "nodemon": "^2.0.15",
+        "xss": "^1.0.6"
+    }
+}

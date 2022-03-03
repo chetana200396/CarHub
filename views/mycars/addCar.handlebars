@@ -1,0 +1,26 @@
+<h1>ADD CAR</h1>
+{{#if hasErrors}}
+    <ul class="error-list">
+        {{#each errors}}
+        <li>
+        {{this}}
+        </li>
+        {{/each}}
+    </ul>
+{{/if}}
+<div id="errors"></div>
+<form action="/myCar/addCar" method="POST" id="add_car" enctype="multipart/form-data">
+<label>Brand Name</label>
+<input type="text" name="brand_name" id="brand_name"><br>
+<label>Color</label>
+<input type="text" name="color" id="color"><br>
+<label>Number</label>
+<input type="text" name="number" id="number"><br>
+<label>Capacity</label>
+<input type="number" name="capacity" id="capacity"><br>
+<label>Rate</label>
+<input type="number" name="rate" id="rate"><br>
+<label>File Upload</label>
+<input type="file" id="upload_File" name="upload_File"> 
+<button id="b2" type="submit">Submit</button>
+</form>

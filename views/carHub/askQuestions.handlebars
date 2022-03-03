@@ -1,0 +1,38 @@
+
+<div id="error_askQuestions" class="alert alert-danger" role="alert"></div>
+{{#if hasErrors}}
+    <ul class="error-list">
+        {{#each errors}}
+        <li>
+        {{this}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+    {{#if isMessage}}
+    <ul class="message-list">
+        {{#each messages}}
+        <li>
+        {{this}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+<link rel="stylesheet" href="/public/css/login.css">
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h1>Ask Questions</h1>
+          </div>
+        </div>
+            <form class="question-form" action="/askQuestions" id="question-form" name="question-form" method="POST">
+            <label for="question_askquestion">Enter Question : </label>
+            <input type="text" name="question" id="question_askquestion" placeholder="Type Question">
+            <input type="submit" value="question" class="btn-p">
+        </form>
+      </div>
+    </div>
+
